@@ -1,4 +1,4 @@
-var totalWords = 0; //TODO: This will change when you can add words
+var totalWords = 0; 
 var wordBank = [];
 
 
@@ -50,6 +50,7 @@ function importWordsToRemoveAndRemove(){
         var index = wordBank.indexOf(word);
         if (index > -1) {
             wordBank.splice(index, 1);
+            totalWords -= 1;
         }
     });
 
