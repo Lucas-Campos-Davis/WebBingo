@@ -17,54 +17,58 @@
                 <textarea id="wordsToAdd">Enter Words To Add Here</textarea>
             </div>
         
-            <div id="cardAndGen">
-
-                <table id="bingocard">
-                    <tr>
-                        <th class="titlerow">B</th>
-                        <th class="titlerow">I</th>
-                        <th class="titlerow">N</th>
-                        <th class="titlerow">G</th>
-                        <th class="titlerow">O</th>
-                    </tr>
-                    <tr>
-                        <td id="s0"> &nbsp;</td>
-                        <td id="s1"> &nbsp;</td>
-                        <td id="s2"> &nbsp;</td>
-                        <td id="s3"> &nbsp;</td>
-                        <td id="s4"> &nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td id="s5"> &nbsp;</td>
-                        <td id="s6"> &nbsp;</td>
-                        <td id="s7"> &nbsp;</td>
-                        <td id="s8"> &nbsp;</td>
-                        <td id="s9"> &nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td id="s10"> &nbsp;</td>
-                        <td id="s11"> &nbsp;</td>
-                        <td id="sfree"> FREE</td>
-                        <td id="s12"> &nbsp;</td>
-                        <td id="s13"> &nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td id="s14"> &nbsp;</td>
-                        <td id="s15"> &nbsp;</td>
-                        <td id="s16"> &nbsp;</td>
-                        <td id="s17"> &nbsp;</td>
-                        <td id="s18"> &nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td id="s19"> &nbsp;</td>
-                        <td id="s20"> &nbsp;</td>
-                        <td id="s21"> &nbsp;</td>
-                        <td id="s22"> &nbsp;</td>
-                        <td id="s23"> &nbsp;</td>
-                    </tr>
-                </table>
-
-                <p><a href="#" onclick="generateCard()">Generate New Card</a></p>
+            <div id="cardAndButtons">
+                <div id="cardContainer">
+                    <table id="bingocard">
+                        <tr>
+                            <th class="titlerow">B</th>
+                            <th class="titlerow">I</th>
+                            <th class="titlerow">N</th>
+                            <th class="titlerow">G</th>
+                            <th class="titlerow">O</th>
+                        </tr>
+                        <tr>
+                            <td id="s0"> &nbsp;</td>
+                            <td id="s1"> &nbsp;</td>
+                            <td id="s2"> &nbsp;</td>
+                            <td id="s3"> &nbsp;</td>
+                            <td id="s4"> &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td id="s5"> &nbsp;</td>
+                            <td id="s6"> &nbsp;</td>
+                            <td id="s7"> &nbsp;</td>
+                            <td id="s8"> &nbsp;</td>
+                            <td id="s9"> &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td id="s10"> &nbsp;</td>
+                            <td id="s11"> &nbsp;</td>
+                            <td id="sfree"> FREE</td>
+                            <td id="s12"> &nbsp;</td>
+                            <td id="s13"> &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td id="s14"> &nbsp;</td>
+                            <td id="s15"> &nbsp;</td>
+                            <td id="s16"> &nbsp;</td>
+                            <td id="s17"> &nbsp;</td>
+                            <td id="s18"> &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td id="s19"> &nbsp;</td>
+                            <td id="s20"> &nbsp;</td>
+                            <td id="s21"> &nbsp;</td>
+                            <td id="s22"> &nbsp;</td>
+                            <td id="s23"> &nbsp;</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>
+                    <a href="#" onclick="generateCard()">Generate New Card</a>
+                    <a href="#" id="printCardButton">Print</a>
+                </p>
+                
             </div>
 
             <div id="removeWords">

@@ -62,6 +62,20 @@ function formatWord(word){
 }
 
 
+function printCard(){
+    var prtContent = document.getElementById("cardContainer");
+    var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+    WinPrint.document.write('<link rel="stylesheet" type="text/css" href="style.css" />');
+    WinPrint.document.write(prtContent.innerHTML);
+    WinPrint.document.close();
+    WinPrint.setTimeout(function(){
+        WinPrint.focus();
+        WinPrint.print();
+        WinPrint.close();
+      }, 1000);
+}
+
+
 window.addEventListener('DOMContentLoaded', function () {
 
     var AddWordsButton = document.getElementById('addWordsButton');
@@ -69,6 +83,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
     var RemoveWordsButton = document.getElementById('removeWordsButton');
     RemoveWordsButton.addEventListener('click', importWordsToRemoveAndRemove);
+
+    var PrintButton = document.getElementById('printCardButton');
+    PrintButton.addEventListener('click', printCard);
 
 });
 
