@@ -7,13 +7,17 @@
         <script type="text/javascript" src="index.js"></script>
     </head>
 
-    <body onload="generateCard()">
+    <body>
         <header>
             Let's Make a BINGO Card
         </header>
         <main class="container">
+            <div id="addWords">
+                <p><a class="submitButton" id= "addWordsButton" href="#">Add Words</a></p>
+                <textarea id="wordsToAdd">Enter Words To Add Here</textarea>
+            </div>
         
-            <div id="content">
+            <div id="cardAndGen">
 
                 <table id="bingocard">
                     <tr>
@@ -60,9 +64,13 @@
                     </tr>
                 </table>
 
+                <p><a href="#" onclick="generateCard()">Generate New Card</a></p>
             </div>
 
-            <p><a href="#" onclick="generateCard()">Generate New Card</a></p>
+            <div id="removeWords">
+                <p><a class="submitButton" href="#" id= "removeWordsButton">Remove Words</a></p>
+                <textarea id="wordsToRemove">Enter Words To remove Here</textarea>
+            </div>
 
         </main>
 

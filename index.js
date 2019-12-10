@@ -1,13 +1,19 @@
-var totalWords = 48; //TODO: This will change when you can add words
+var totalWords = 0; //TODO: This will change when you can add words
+var wordBank = [];
 
 
 
-//This function will be called when the page is loaded
+//This function will be called when the button is pressed to generate a new card
 function generateCard() {
-    var usedIndexs = new Array(totalWords).fill(false);
-    //iterate though all the non-Free cells
-    for(var i=0; i<24; i++){
-        setCell(i,usedIndexs);
+    if(totalWords < 24){
+        alert("You need to atleast 24 words, you have " + totalWords);
+    }
+    else{
+        var usedIndexs = new Array(totalWords).fill(false);
+        //iterate though all the non-Free cells
+        for(var i=0; i<24; i++){
+            setCell(i,usedIndexs);
+        }
     }
 }
 
@@ -21,8 +27,49 @@ function setCell(squareNum, usedIndexs) {
     }while(usedIndexs[index]);
 
     usedIndexs[index] = true;
-    document.getElementById(squareID).innerHTML = index; //TODO: Change this to use the word corresponding to the index
+    document.getElementById(squareID).innerHTML = wordBank[index];
 }
+
+function importWordsToAdd(){
+    var wordsFromPage = document.getElementById('wordsToAdd').value;
+    var splitWords = wordsFromPage.split(/[\n, ]/).filter(word => word != "").map(formatWord);
+    wordBank = [ ... new Set(wordBank.concat(splitWords))];
+    totalWords = wordBank.length;
+    //console.log(wordBank.length);
+}
+
+function importWordsToRemoveAndRemove(){
+    var wordsFromPage = document.getElementById('wordsToRemove').value;
+    var splitWords = wordsFromPage.split(/[\n, ]/).filter(word => word != "").map(formatWord);
+    var wordBankRemove = [ ... new Set(splitWords)];
+    
+    console.log(wordBank);
+    console.log(wordBankRemove);
+    
+    wordBankRemove.forEach(word => {
+        var index = wordBank.indexOf(word);
+        if (index > -1) {
+            wordBank.splice(index, 1);
+        }
+    });
+
+    console.log(wordBank);
+}
+
+function formatWord(word){
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
+
+window.addEventListener('DOMContentLoaded', function () {
+
+    var AddWordsButton = document.getElementById('addWordsButton');
+    AddWordsButton.addEventListener('click', importWordsToAdd);
+
+    var RemoveWordsButton = document.getElementById('removeWordsButton');
+    RemoveWordsButton.addEventListener('click', importWordsToRemoveAndRemove);
+
+});
 
 
 

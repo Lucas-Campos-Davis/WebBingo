@@ -16,6 +16,7 @@ header{
 }
 
 #bingocard{
+    table-layout: fixed;
     margin: 0 auto;
     text-align: center;
     width: 400px;
@@ -29,6 +30,7 @@ th, td {
     text-align: center;
     border: 3px solid black;
     width: 20%;
+    word-wrap: break-word;
 }
 
 h1, p {
@@ -46,6 +48,18 @@ p a {
     padding: 10px;
     border-radius: 10px;
   }
+
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+
+textarea{
+    width: 100%;
+}
+.submitButton{
+    font-size: 15pt;
+}
 
 a:hover {
     background: #000000;
